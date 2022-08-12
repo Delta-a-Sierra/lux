@@ -1,0 +1,105 @@
+name: Build Infrastructure
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - release
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    env:
+      AWS_DEFAULT_REGION: "eu-west-2"
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      TF_VAR_public_key: ${{ secrets.public_key }}
+      TF_VAR_domain_name: ${{ secrets.TF_VAR_DOMAIN_NAME }}
+      TF_VAR_bucket_name: ${{ secrets.bucket_name }}
+      TF_VAR_db_username: ${{ secrets.db_username }}
+      TF_VAR_db_password: ${{ secrets.db_password }}
+      TF_VAR_db_database_name: ${{ secrets.db_database_name }}
+    steps:
+      - uses: actions/checkout@v1
+      - name: test aws cli conntention
+        run: aws sts get-caller-identity
+      - uses: hashicorp/setup-terraform@v2
+      - name: Initailise infrastructure folder
+        run: terraform -chdir=./infrastructure init
+      - name: Terraform apply
+        run: |
+          cd ./infrastructure 
+          terraform apply --auto-approve
+      - name: export terraform output
+        run: terraform output -json > tf_outputs.json
+      - uses: actions/upload-artifact@master
+        with:
+          name: tf_outputs
+          path: ./infrastructure/tf_outputs.json
+
+  setup_backend_env:
+    needs: terraform
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: install jq
+        run: sudo apt-get install -y jq
+      - uses: actions/download-artifact@v3
+        with:
+          name: tf_outputs
+      - name: add content to .env
+        run: |
+          echo DB_USERNAME=${{ secrets.db_username }} > .env 
+          echo DB_PASSWORD=${{ secrets.db_password }} >> .env 
+          echo DB_NAME=${{ secrets.db_database_name }} >> .env 
+          echo DB_HOSTNAME=$(jq .db_endpoint.value tf_outputs.json) >> .env
+          echo NODE_ENV=production >> .env
+      - uses: actions/upload-artifact@master
+        with:
+          name: backend_env
+          path: .env
+
+  deploy_api:
+    needs: [terraform, setup_backend_env]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/download-artifact@v3
+        with:
+          name: backend_env
+      - name: add content to .env
+        run: mv -f .env ./backend/.env
+      - name: setup ssh key
+        run: |
+          mkdir -p ~/.ssh/
+          touch ~/.ssh/lux-api
+          echo "${{ secrets.ssh_key}}" > ~/.ssh/lux-api
+      - name: change ssh file permissions
+        run: sudo chmod 600 ~/.ssh/lux-api
+      - name: sync files to api server
+        run: rsync -av -e "ssh -i ~/.ssh/lux-api -o 'StrictHostKeyChecking no' "  ./backend/ ec2-user@lux-api.delta-a-sierra.co.uk:~/www/lux/backend
+      - name: npm install and start luxapi service
+        run: ssh -i ~/.ssh/lux-api -o 'StrictHostKeyChecking no' ec2-user@lux-api.delta-a-sierra.co.uk "cd ~/www/lux/backend; npm install; sudo systemctl stop luxapi; sudo systemctl start luxapi"
+
+  deploy_frontend:
+    needs: [terraform, setup_backend_env, deploy_api]
+    runs-on: ubuntu-latest
+    env:
+      CI: false
+      AWS_DEFAULT_REGION: "eu-west-2"
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    steps:
+      - uses: actions/checkout@v1
+      - name: test aws cli conntention
+        run: aws sts get-caller-identity
+      - uses: actions/setup-node@v3
+      - name: install npm depencies
+        run: |
+          cd ./frontend
+          npm install
+      - name: build package
+        run: |
+          cd ./frontend
+          npm run build
+      - name: deploy to s3
+        run: aws s3 sync ./frontend/build s3://${{ secrets.bucket_name }}
