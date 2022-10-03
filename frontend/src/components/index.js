@@ -2,6 +2,8 @@ export { default as FloatLink } from "./floatLink";
 export { default as GetStartedContainer } from "./GetStartedContainer";
 export { default as SliderEllipses } from "./sliderEllipses/sliderEllipses";
 export { default as ProfileAside } from "./profileAside";
+export { default as InteractionCounter } from "./interactionCounter";
+export { default as LinkText } from "./linkText";
 
 // Post
 export { default as Post } from "./post";
