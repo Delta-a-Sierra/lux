@@ -5,7 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const TopNav = () => {
   return (
-    <nav className="fixed top-0 w-screen overflow-hidden bg-primary">
+    <nav className="w-screen overflow-hidden bg-primary">
       <div className=" flex justify-between items-center w-full h-16 p-1 px-3 md:px-8">
         <Logo width="6" />
         <div className="flex justify-end items-center gap-2 md:m-auto w-fit">

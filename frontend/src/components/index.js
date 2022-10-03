@@ -2,6 +2,10 @@ export { default as FloatLink } from "./floatLink";
 export { default as GetStartedContainer } from "./GetStartedContainer";
 export { default as SliderEllipses } from "./sliderEllipses/sliderEllipses";
 
+// Post
+export { default as Post } from "./post";
+export { default as PostUser } from "./postUser";
+export { default as Comment } from "./comment";
 // Buttons
 export { default as Button } from "./buttons/button";
 export { default as OutlinedButton } from "./buttons/outlineButton";
@@ -12,6 +16,7 @@ export { default as PasswordInput } from "./inputs/passwordInput";
 export { default as TextInput } from "./inputs/textInput";
 export { default as Dropdown } from "./inputs/dropdown";
 export { default as SearchInput } from "./inputs/search";
+export { default as NewPost } from "./inputs/newPost";
 
 // Logos
 export { default as Logo } from "./logos/logo";
