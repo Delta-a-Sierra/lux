@@ -1,11 +1,13 @@
 export { default as FloatLink } from "./floatLink";
 export { default as GetStartedContainer } from "./GetStartedContainer";
 export { default as SliderEllipses } from "./sliderEllipses/sliderEllipses";
+export { default as ProfileAside } from "./profileAside";
 
 // Post
 export { default as Post } from "./post";
 export { default as PostUser } from "./postUser";
 export { default as Comment } from "./comment";
+
 // Buttons
 export { default as Button } from "./buttons/button";
 export { default as OutlinedButton } from "./buttons/outlineButton";
