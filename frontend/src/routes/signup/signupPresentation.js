@@ -9,6 +9,8 @@ import {
 import { useMediaQuery } from "../../hooks";
 import { motion } from "framer-motion";
 
+//TODO fix weird animation on mobile as content slides when switching between signin/signup pages (change position type for animation? / hide overlfow)
+
 let containerMotion = {
   slid: {
     x: 0,

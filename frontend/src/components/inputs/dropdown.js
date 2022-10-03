@@ -2,6 +2,8 @@ import { createRef, useRef, useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
 
+// remove input from file names in input folder
+
 const Dropdown = ({
   errorMsg,
   name,
@@ -16,7 +18,7 @@ const Dropdown = ({
 
   const listItems = useRef({});
 
-  if(items){
+  if (items) {
     items.forEach((item) => {
       listItems.current = {
         ...listItems.current,
@@ -24,7 +26,6 @@ const Dropdown = ({
       };
     });
   }
-
 
   const ToggleDropdown = () => {
     setActive((prev) => !prev);
