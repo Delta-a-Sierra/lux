@@ -36,17 +36,17 @@ const Post = () => {
         </p>
       </div>
       <div className=" flex gap-4 border-t-2 border-secondary border-opacity-50 px-4 py-2">
-        <div className="flex items-center" onClick={ToggleLike}>
+        <div className="flex items-center gap-1" onClick={ToggleLike}>
           {liked ? (
             <AiFillHeart color="#F58A07" size="1.5em" />
           ) : (
-            <AiOutlineHeart color="#F58A07" size="1.5em" />
+            <AiOutlineHeart color="#7f7f7f" size="1.5em" />
           )}
-          <p>{likes}</p>
+          <p className="text-gray-500">{likes}</p>
         </div>
-        <div className="flex items-center" onClick={ToggleComments}>
-          <FaRegComment color="#F58A07" size="1.2em" />
-          <p>5</p>
+        <div className="flex items-center gap-1" onClick={ToggleComments}>
+          <FaRegComment color="#7f7f7f" size="1.2em" />
+          <p className="text-gray-500">5</p>
         </div>
       </div>
       {displayComments && <Comment />}

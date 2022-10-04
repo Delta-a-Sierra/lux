@@ -11,29 +11,32 @@ import {
 import { useMediaQuery } from "../../hooks";
 
 const HomePresentation = () => {
-  const isDesktop = useMediaQuery("(min-width: 1580px)");
+  const isDesktop = useMediaQuery("(min-width: 1536px)");
 
   return (
     <div>
       <TopNav />
-      <main className="p-4 md:mx-10 mt-4">
-        <section className="mt-4 md:flex w-full gap-8">
-          <div className="hidden md:flex flex-col gap-y-8 basis-1/6 w-3/6 lg:w-2/6 2xl:w-1/6">
-            <ProfileAside />
-            <AsideMenu />
-          </div>
-          <div className="basis-auto">
-            <NewPost />
-            <div className="mt-4">
-              <Post />
-            </div>
-          </div>
-          {isDesktop && (
-            <div className="hidden md:block basis-1/6 w-1/6">
+      <main className="p-4 md:mx-10 mt-4 grid grid-cols-6 gap-x-8">
+        <aside className="hidden md:flex flex-col gap-y-8 col-span-2 2xl:col-span-1">
+          <ProfileAside />
+          <AsideMenu />
+          {!isDesktop && (
+            <div className="hidden md:flex flex-col gap-y-8 col-span-1">
               <ChatAside />
             </div>
           )}
-        </section>
+        </aside>
+        <div className=" col-span-6 md:col-span-4">
+          <NewPost />
+          <div className="mt-4">
+            <Post />
+          </div>
+        </div>
+        {isDesktop && (
+          <aside className="hidden md:flex flex-col gap-y-8 col-span-1">
+            <ChatAside />
+          </aside>
+        )}
       </main>
       <div className="hidden md:block">
         <Footer />

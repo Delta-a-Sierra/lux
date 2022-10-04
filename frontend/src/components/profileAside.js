@@ -23,7 +23,7 @@ const ProfileAside = () => {
       <InteractionCounter />
       <div className="xl:mt-4 ">
         <LinkText
-          text="View More"
+          text="View Profile"
           center
           textSize={`${isLarge ? "md" : "xs"}`}
         />
