@@ -10,6 +10,10 @@ export { default as Post } from "./post";
 export { default as PostUser } from "./postUser";
 export { default as Comment } from "./comment";
 
+// Chat
+export { default as ChatAside } from "./chat/chataside";
+export { default as NameAndStatus } from "./chat/nameAndStatus";
+
 // Buttons
 export { default as Button } from "./buttons/button";
 export { default as OutlinedButton } from "./buttons/outlineButton";

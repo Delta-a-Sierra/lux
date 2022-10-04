@@ -5,6 +5,8 @@ import PostUser from "./postUser";
 import { Comment } from "../components";
 
 const Post = () => {
+  //TODO change icons for comment/like to gray when not active
+
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(23);
   const [displayComments, setDisplayComments] = useState(false);

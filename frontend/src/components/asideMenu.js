@@ -9,26 +9,26 @@ const AsideMenu = () => {
 
   return (
     <div className="bg-gray-100 rounded-md text-primary font-bold text-md  2xl:text-xl grid tracking-wide grid-cols-3 grid-rows-3 px-2 py-4 shadow-md gap-y-4 2xl:gap-y-2">
-      <div className="col-span-3 m-auto xl:ml-auto 2xl:col-span-1">
+      <div className="col-span-3 m-auto xl:ml-auto lg:col-span-1">
         <HiHome color="#084887" size={`${isDesktop ? "1.5em" : "2em"}`} />
       </div>
-      <h3 className="xl:col-span-2 mr-auto hidden 2xl:inline-block">Home</h3>
-      <div className="col-span-3 m-auto xl:ml-auto 2xl:col-span-1 alert">
+      <h3 className="lg:col-span-2 mr-auto hidden lg:inline-block">Home</h3>
+      <div className="col-span-3 m-auto xl:ml-auto lg:col-span-1 alert">
         <HiBell color="#084887" size={`${isDesktop ? "1.5em" : "2em"}`} />
       </div>
-      <h3 className="xl:col-span-2 mr-auto hidden 2xl:inline-block">
+      <h3 className="lg:col-span-2 mr-auto hidden lg:inline-block">
         Notifications
       </h3>
-      <div className="col-span-3 m-auto xl:ml-auto 2xl:col-span-1 alert">
+      <div className="col-span-3 m-auto xl:ml-auto lg:col-span-1 alert">
         <HiChatAlt color="#084887" size={`${isDesktop ? "1.5em" : "2em"}`} />
       </div>
-      <div className="xl:col-span-2 mr-auto hidden 2xl:inline-block">
+      <div className="lg:col-span-2 mr-auto hidden lg:inline-block">
         <h3>Messages</h3>
       </div>
-      <div className="col-span-3 m-auto xl:ml-auto 2xl:col-span-1">
+      <div className="col-span-3 m-auto xl:ml-auto lg:col-span-1">
         <HiUser color="#084887" size={`${isDesktop ? "1.5em" : "2em"}`} />
       </div>
-      <div className="xl:col-span-2 mr-auto hidden 2xl:inline-block">
+      <div className="lg:col-span-2 mr-auto hidden lg:inline-block">
         <h3>Friends</h3>
       </div>
     </div>
