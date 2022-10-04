@@ -43,12 +43,13 @@ const Dropdown = ({
   const findItem = (char) => {
     return items.find((item) => {
       try {
-        if (item[0].toLowerCase() == char.toLowerCase()) {
+        if (item[0].toLowerCase() === char.toLowerCase()) {
           return item;
         }
       } catch {
         return null;
       }
+      return null;
     });
   };
 

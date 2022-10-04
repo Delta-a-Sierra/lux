@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { IoPersonCircle } from "react-icons/io5";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
 import PostUser from "./postUser";

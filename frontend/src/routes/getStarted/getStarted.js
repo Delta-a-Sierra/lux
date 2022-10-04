@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 //TODO full country / city list
 
 const GetStarted = () => {
-  const [slideCount, setSlideCount] = useState(3);
+  const [slideCount] = useState(3);
   const [currentSlide, setCurrentSlide] = useState(0);
   const Navigate = useNavigate();
 
@@ -36,14 +36,14 @@ const GetStarted = () => {
     dateString: "",
   });
 
-  const CheckIfError = (fields, tempErrors) => {
-    fields.forEach((field) => {
-      if (tempErrors[field]) {
-        return false;
-      }
-      return true;
-    });
-  };
+  // const CheckIfError = (fields, tempErrors) => {
+  //   fields.forEach((field) => {
+  //     if (tempErrors[field]) {
+  //       return false;
+  //     }
+  //     return true;
+  //   });
+  // };
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });

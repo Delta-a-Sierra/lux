@@ -1,5 +1,7 @@
 import React from "react";
 
+//TODO add link animation
+
 const LinkText = ({ text, center }) => {
   return (
     <div>
