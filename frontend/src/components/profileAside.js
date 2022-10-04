@@ -3,7 +3,7 @@ import { IoPersonCircle, IoLocationSharp } from "react-icons/io5";
 import { InteractionCounter, LinkText } from "../components";
 const ProfileAside = () => {
   return (
-    <div className="bg-gray-100 rounded-md pb-4">
+    <div className="bg-gray-100 rounded-md pb-4 shadow-md">
       <div className="bg-secondary rounded-t-md w-full h-16"></div>
       <div className="flex justify-center relative border-white pb-5">
         <div className="bg-gray-100 rounded-full -top-10 absolute">

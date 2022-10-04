@@ -1,9 +1,9 @@
 export { default as FloatLink } from "./floatLink";
 export { default as GetStartedContainer } from "./GetStartedContainer";
 export { default as SliderEllipses } from "./sliderEllipses/sliderEllipses";
-export { default as ProfileAside } from "./profileAside";
 export { default as InteractionCounter } from "./interactionCounter";
 export { default as LinkText } from "./linkText";
+export { default as Footer } from "./footer";
 
 // Post
 export { default as Post } from "./post";
@@ -28,3 +28,7 @@ export { default as LogoCirc } from "./logos/logoCirc";
 
 // Navs
 export { default as TopNav } from "./topNav/topNav";
+
+// Asides
+export { default as AsideMenu } from "./asideMenu";
+export { default as ProfileAside } from "./profileAside";

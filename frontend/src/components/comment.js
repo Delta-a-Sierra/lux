@@ -1,6 +1,8 @@
 import React from "react";
 import PostUser from "./postUser";
 
+//TODO add animation for when comments are being loading in
+
 const Comment = () => {
   return (
     <div className=" border-t-2 border-secondary border-opacity-50 pt-2">
