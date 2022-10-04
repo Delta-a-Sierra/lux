@@ -4,6 +4,8 @@ export { default as SliderEllipses } from "./sliderEllipses/sliderEllipses";
 export { default as InteractionCounter } from "./interactionCounter";
 export { default as LinkText } from "./linkText";
 export { default as Footer } from "./footer";
+export { default as ProfileHeader } from "./profileHeader";
+export { default as Tab } from "./tab";
 
 // Post
 export { default as Post } from "./post";
