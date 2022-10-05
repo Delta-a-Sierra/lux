@@ -1,5 +1,6 @@
 import React from "react";
 import { IoPersonCircle, IoLocationSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 import { InteractionCounter, LinkText } from "../components";
 import { useMediaQuery } from "../hooks";
 const ProfileAside = () => {
@@ -22,11 +23,13 @@ const ProfileAside = () => {
       </div>
       <InteractionCounter />
       <div className="xl:mt-4 ">
-        <LinkText
-          text="View Profile"
-          center
-          textSize={`${isLarge ? "md" : "xs"}`}
-        />
+        <Link to="/profile">
+          <LinkText
+            text="View Profile"
+            center
+            textSize={`${isLarge ? "md" : "xs"}`}
+          />
+        </Link>
       </div>
     </div>
   );

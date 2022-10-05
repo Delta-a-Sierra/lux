@@ -16,7 +16,7 @@ const HomePresentation = () => {
   return (
     <div>
       <TopNav />
-      <main className="p-4 md:mx-10 grid grid-cols-6 gap-x-8">
+      <main className="p-4 md:mx-10  grid grid-cols-6 gap-x-8">
         <aside className="hidden md:flex flex-col gap-y-4 lg:gap-y-8 col-span-2 2xl:col-span-1">
           <ProfileAside />
           <AsideMenu />

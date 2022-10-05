@@ -9,7 +9,7 @@ const Tab = ({ title, active, onClick }) => {
       onClick={() => onClick(title.toLowerCase())}
     >
       <h3
-        className={`text-primary font-bold text-xs sm:text-md 2xl:text-lg tracking-wider pb-1  sm:w-20 text-center ${
+        className={`text-primary font-bold text-xs sm:text-md  tracking-wider pb-1  sm:w-20 text-center ${
           !active && "opacity-70"
         }`}
       >

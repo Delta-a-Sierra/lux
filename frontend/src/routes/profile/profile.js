@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   TopNav,
-  NewPost,
   Post,
   ProfileAside,
   AsideMenu,
@@ -20,11 +19,10 @@ const Profile = () => {
   return (
     <div className="h-screen w-screen overflow-hidden overflow-y-scroll items-center flex flex-col gap-y-2">
       <TopNav />
-      <div className="flex w-full flex-col flex-1 gap-y-3 px-2">
+      <div className="flex flex-col flex-1 gap-y-3 px-2 md:mx-10">
         <ProfileHeader activePage={page} setActivePage={setPage} />
-        <div className="flex-1 mb-4 grid grid-cols-6 gap-x-4 gap-y-4">
+        <div className="flex-1 mb-4 grid grid-cols-6 gap-4 lg:gap-8">
           <aside className="hidden md:flex flex-col gap-y-4 lg:gap-y-4 col-span-2 2xl:col-span-1">
-            <ProfileAside />
             <AsideMenu />
             {!isDesktop && (
               <div className="hidden md:flex flex-col gap-y-8 col-span-1">

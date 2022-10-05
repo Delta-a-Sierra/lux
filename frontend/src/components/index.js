@@ -43,3 +43,4 @@ export { default as ProfileHeader } from "./profileHeader";
 // Asides
 export { default as AsideMenu } from "./asideMenu";
 export { default as ProfileAside } from "./profileAside";
+export { default as AsideItem } from "./asideItem";
