@@ -1,13 +1,17 @@
-import {  useState } from "react";
+import { useState } from "react";
 import GetStartedPresentation from "./getStartedPresentation";
 import { DateTime } from "luxon";
 import { useNavigate } from "react-router-dom";
 
+//TODO when pressing enter on form it should navigate to next slide
+//TODO dropdown should allow manual input
+//TODO dropwdown should display content that matches manually typed input
+//TODO full country / city list
 
 const GetStarted = () => {
-  const [slideCount, setSlideCount] = useState(3);
+  const [slideCount] = useState(3);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const Navigate = useNavigate()
+  const Navigate = useNavigate();
 
   const [form, setForm] = useState({
     firstName: "",
@@ -19,8 +23,7 @@ const GetStarted = () => {
     city: "",
   });
   const countries = ["Argentina", "Ethophia", "United Kingdom"];
-  const cities =  ["London", "Paris", "Rome", "Vienna"]
-
+  const cities = ["London", "Paris", "Rome", "Vienna"];
 
   const [formError, setFormError] = useState({
     firstName: "",
@@ -33,14 +36,14 @@ const GetStarted = () => {
     dateString: "",
   });
 
-  const CheckIfError = (fields, tempErrors) => {
-    fields.forEach((field) => {
-      if (tempErrors[field]) {
-        return false;
-      }
-      return true;
-    });
-  };
+  // const CheckIfError = (fields, tempErrors) => {
+  //   fields.forEach((field) => {
+  //     if (tempErrors[field]) {
+  //       return false;
+  //     }
+  //     return true;
+  //   });
+  // };
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -54,11 +57,8 @@ const GetStarted = () => {
     setCurrentSlide(index);
   };
 
+  const SubmitForm = () => {};
 
-  const SubmitForm = () => {
-    
-  };
-  
   const CheckForRequired = (fields) => {
     let errorFound = false;
     let tempErrors = {
@@ -179,36 +179,36 @@ const GetStarted = () => {
     });
     let fields = ["firstName", "lastName"];
     if (CheckForRequired(fields)) {
-      setCurrentSlide(0)
-      console.log(`required: ${fields}`)
+      setCurrentSlide(0);
+      console.log(`required: ${fields}`);
       return false;
     }
     fields = ["day", "month", "year"];
     if (CheckForRequired(fields)) {
-      setCurrentSlide(1)
+      setCurrentSlide(1);
       return false;
     }
     if (CheckDateString()) {
-      setCurrentSlide(1)
+      setCurrentSlide(1);
       return false;
     }
     if (CheckIfEighteen()) {
-      setCurrentSlide(1)
+      setCurrentSlide(1);
       return false;
     }
     fields = ["country", "city"];
     if (CheckForRequired(fields)) {
-      setCurrentSlide(2)
+      setCurrentSlide(2);
       return false;
     }
-    return true
-  }
+    return true;
+  };
 
   const GoNextSlide = () => {
     if (currentSlide + 1 === slideCount) {
-      if(FinalValidationCheck()){
+      if (FinalValidationCheck()) {
         SubmitForm();
-        Navigate("/home")
+        Navigate("/home");
       }
       return;
     }
@@ -263,9 +263,6 @@ const GetStarted = () => {
     "November",
     "December",
   ];
-
-
-
 
   let currentYear = DateTime.now().year;
 

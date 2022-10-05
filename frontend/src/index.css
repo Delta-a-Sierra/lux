@@ -1,5 +1,54 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer utilities {
+  @variants responsive {
+    .alert {
+      position: relative;
+    }
+    .alert::after {
+      position: absolute;
+      content: " ";
+      top: 0;
+      left: 65%;
+      border-radius: 100%;
+      background-color: #F58A07;
+      width: 0.7em;
+      height: 0.7em;
+      border: 2px solid #f2f2f2;
+    }
+    .status {
+      position: relative;
+    }
+    .status::before {
+      position: absolute;
+      content: " ";
+      top: 0;
+      left: 65%;
+      border-radius: 100%;
+      background-color: #F58A07;
+      width: 0.7em;
+      height: 0.7em;
+      border: 2px solid #f2f2f2;
+    }
+    .status-online::before {
+      position: absolute;
+      content: " ";
+      top: 0;
+      left: 65%;
+      border-radius: 100%;
+      background-color: #F58A07;
+      width: 0.7em;
+      height: 0.7em;
+      border: 2px solid #f2f2f2;
+    }
+    @media only screen and (max-width: 1535px) {
+      .alert::after {
+        width: 0.8em;
+        height: 0.8em;
+        border: 2px solid #f2f2f2;
+      }
+    }
+  }
+}/*# sourceMappingURL=index.css.map */

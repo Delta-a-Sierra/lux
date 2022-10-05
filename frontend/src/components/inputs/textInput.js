@@ -1,4 +1,6 @@
 const TextInput = ({ errorMsg, name, value, onChange, placeholder }) => {
+  //TODO change auto fill background color
+
   return (
     <div className="w-full">
       <label

@@ -3,7 +3,7 @@ const Ellipse = ({ active, SetActiveSlide }) => {
     <div
       onClick={SetActiveSlide}
       className={`rounded-full shadow-sm w-4 h-4 ${
-        active ? "bg-secondary" : "bg-gray-300"
+        active ? "bg-accent" : "bg-gray-300"
       }`}
     ></div>
   );

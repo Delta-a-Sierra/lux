@@ -7,7 +7,7 @@ const SliderEllipses = ({ count, current, SetActiveSlide }) => {
 
   useEffect(() => {
     CreateEllipses(count);
-  }, []);
+  }, [count]);
 
   useEffect(() => {
     if (!loading) {
