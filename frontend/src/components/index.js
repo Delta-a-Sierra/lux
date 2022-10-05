@@ -7,7 +7,7 @@ export { default as Footer } from "./footer";
 export { default as Tab } from "./tab";
 
 // UserInfo
-export { default as User } from "./user";
+export { default as UserCard } from "./userCard";
 export { default as Nameandlocation } from "./nameandlocation";
 
 // Post

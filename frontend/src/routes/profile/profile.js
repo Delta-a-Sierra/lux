@@ -8,7 +8,7 @@ import {
   ChatAside,
   ProfileHeader,
   SearchAlt,
-  User,
+  UserCard,
 } from "../../components";
 import { useMediaQuery } from "../../hooks";
 
@@ -19,7 +19,7 @@ const Profile = () => {
   return (
     <div className="h-screen w-screen overflow-hidden overflow-y-scroll items-center flex flex-col gap-y-2">
       <TopNav />
-      <div className="flex flex-col flex-1 gap-y-3 px-2 md:mx-10">
+      <div className="flex w-full flex-col flex-1 gap-y-3 px-4 md:px-10">
         <ProfileHeader activePage={page} setActivePage={setPage} />
         <div className="flex-1 mb-4 grid grid-cols-6 gap-4 lg:gap-8">
           <aside className="hidden md:flex flex-col gap-y-4 lg:gap-y-4 col-span-2 2xl:col-span-1">
@@ -41,18 +41,14 @@ const Profile = () => {
             )}
             {page === "following" && (
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2">
-                <User />
-                <User />
-                <User />
+                <UserCard />
+                <UserCard />
+                <UserCard />
               </div>
             )}
             {page === "followers" && (
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2">
-                <User />
-                <User />
-                <User />
-                <User />
-                <User />
+                <UserCard />
               </div>
             )}
           </div>
