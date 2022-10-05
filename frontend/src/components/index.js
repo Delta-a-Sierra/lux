@@ -4,8 +4,11 @@ export { default as SliderEllipses } from "./sliderEllipses/sliderEllipses";
 export { default as InteractionCounter } from "./interactionCounter";
 export { default as LinkText } from "./linkText";
 export { default as Footer } from "./footer";
-export { default as ProfileHeader } from "./profileHeader";
 export { default as Tab } from "./tab";
+
+// UserInfo
+export { default as User } from "./user";
+export { default as Nameandlocation } from "./nameandlocation";
 
 // Post
 export { default as Post } from "./post";
@@ -27,6 +30,7 @@ export { default as TextInput } from "./inputs/textInput";
 export { default as Dropdown } from "./inputs/dropdown";
 export { default as SearchInput } from "./inputs/search";
 export { default as NewPost } from "./inputs/newPost";
+export { default as SearchAlt } from "./inputs/searchAlt";
 
 // Logos
 export { default as Logo } from "./logos/logo";
@@ -34,6 +38,7 @@ export { default as LogoCirc } from "./logos/logoCirc";
 
 // Navs
 export { default as TopNav } from "./topNav/topNav";
+export { default as ProfileHeader } from "./profileHeader";
 
 // Asides
 export { default as AsideMenu } from "./asideMenu";
