@@ -21,9 +21,8 @@ const Signup = () => {
         .required()
         .oneOf([Yup.ref("password"), null], "Passwords must match"),
     }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      console.log(formik.errors);
+    onSubmit: () => {
+      Navigate("/getstarted");
     },
   });
 

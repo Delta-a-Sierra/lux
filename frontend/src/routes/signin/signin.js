@@ -16,9 +16,8 @@ const SignIn = () => {
       email: Yup.string().email().required(),
       password: Yup.string().password().required(),
     }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      console.log(formik.errors);
+    onSubmit: () => {
+      Navigate("/getstarted");
     },
   });
 
