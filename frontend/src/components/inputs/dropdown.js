@@ -106,7 +106,7 @@ const Dropdown = ({
         >
           <label
             htmlFor={name}
-            className={` flex items-center space-x-3 bg-gray-200 px-4 py-3 rounded-full text-xl`}
+            className={` flex items-center space-x-3 bg-gray-200 px-4 py-3 rounded-full text-xs sm:text-base`}
           >
             <input
               className="bg-gray-200 w-full outline-none cursor-pointer"
@@ -157,7 +157,7 @@ const Dropdown = ({
             htmlFor="email"
             className={` flex items-center space-x-3 bg-gray-200 px-4 py-3 ${
               active ? "rounded-tl-lg rounded-tr-lg" : "rounded-full"
-            } w-full text-xl`}
+            } w-full text-xs sm:text-base`}
           >
             <input
               className="bg-gray-200 w-full outline-none cursor-pointer"
@@ -200,10 +200,10 @@ const Dropdown = ({
 
           <p
             className={`${
-              errorMsg ? "inline" : "hidden"
-            } mt-1 ml-5 text-red-500 font-nunito tracking-wider text-md`}
+              errorMsg ? "visible" : "invisible"
+            } mt-1 ml-5 text-red-500 font-nunito tracking-wider text-xs sm:text-base`}
           >
-            {errorMsg}
+            {errorMsg ? errorMsg : "error"}
           </p>
         </div>
       )}

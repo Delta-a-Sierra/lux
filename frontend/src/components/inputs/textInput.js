@@ -7,7 +7,7 @@ const TextInput = ({ errorMsg, name, value, onChange, placeholder }) => {
         htmlFor="email"
         className={`${
           errorMsg ? "border border-red-500" : ""
-        } flex items-center space-x-3 bg-gray-200 px-4 py-3 rounded-full w-full text-xl`}
+        } flex items-center space-x-3 bg-gray-200  rounded-full w-full px-4 py-3  text-xs sm:text-base`}
       >
         <input
           className="bg-gray-200 w-full outline-none"
@@ -20,10 +20,10 @@ const TextInput = ({ errorMsg, name, value, onChange, placeholder }) => {
       </label>
       <p
         className={`${
-          errorMsg ? "inline" : "hidden"
-        } mt-1 ml-5 text-red-500 font-nunito tracking-wider text-md`}
+          errorMsg ? "visible" : "invisible"
+        } mt-1 ml-5 text-red-500 font-nunito tracking-wider text-xs sm:text-base`}
       >
-        {errorMsg}
+        {errorMsg ? errorMsg : "error"}
       </p>
     </div>
   );
