@@ -92,23 +92,23 @@ const SignInPresentation = ({ formik, LoadSignup }) => {
   }
 
   return (
-    <div className="flex">
+    <div className="flex w-screen h-screen overflow-hidden">
       <motion.div
         variants={containerMotion}
         initial="slid"
         animate="base"
         exit="slid"
-        className="bg-primary flex-col items-center justify-center space-y-10 p-5 hidden sm:flex sm:w-2/5"
+        className="bg-primary flex-col items-center justify-center space-y-10  hidden sm:flex p-2 w-2/5 lg:w-2/5 xl:w-1/5"
       >
         <h1 className="font-open font-extrabold text-white text-3xl text-center">
           Hello, Friend!
         </h1>
-        <p className="text-white font-nunito w-2/3 text-center text-xl font-thin tracking-wider">
+        <p className="text-white font-nunito w-4/5 text-center text-base font-thin tracking-wider">
           Enter your personal details to get started on your journey with us.
         </p>
         <OutlinedButton color="white" text="Sign Up" onClick={LoadSignup} />
       </motion.div>
-      <div className="p-10 h-screen w-screen flex flex-col items-center space-y-10">
+      <div className="p-10 h-screen w-screen flex flex-col items-center space-y-4 pb-10">
         <motion.div
           variants={containerMotion}
           initial="slid"
@@ -123,18 +123,18 @@ const SignInPresentation = ({ formik, LoadSignup }) => {
           initial="slid"
           animate="base"
           exit="exit"
-          className="w-full flex flex-col items-center sm:h-2/3 sm:justify-center space-y-10"
+          className="w-full justify-center flex flex-col items-center sm:h-2/3 sm:justify-center space-y-4"
         >
-          <h1 className="font-open font-extrabold text-primary text-3xl text-center">
+          <h1 className="font-open font-extrabold text-primary text-2xl text-center">
             Sign In To Lux
           </h1>
           <div className="flex space-x-5">
-            <FaFacebook size="3em" color="#084887" />
-            <FaGoogle size="3em" color="#084887" />
+            <FaFacebook size="2em" color="#084887" />
+            <FaGoogle size="2em" color="#084887" />
           </div>
           <form
             onSubmit={formik.handleSubmit}
-            className="w-full space-y-4 flex flex-col items-center pb-5 sm:w-2/5"
+            className="w-full space-y-2 flex flex-col items-center pb-5 sm:w-4/5 md:w-3/5 lg:w-2/4 xl:w-1/4 text-xs"
           >
             <EmailInput
               name="email"

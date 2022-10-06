@@ -15,7 +15,7 @@ const PasswordInput = ({
         htmlFor="email"
         className={`${
           errorMsg ? "border border-red-500" : ""
-        } flex items-center space-x-3 bg-gray-200 px-4 py-3 rounded-full w-full text-xl`}
+        } flex items-center space-x-3 bg-gray-200 px-4 py-3 rounded-full w-full text-sm md:text-base`}
       >
         <MdPassword size="1.4em" color="#7F7F7F" />
         <input
@@ -30,10 +30,10 @@ const PasswordInput = ({
       </label>
       <p
         className={`${
-          touched && errorMsg ? "inline" : "hidden"
-        } mt-1 ml-5 text-red-500 font-nunito tracking-wider text-md`}
+          touched && errorMsg ? "visible" : "hidden"
+        } mt-1 ml-5 text-red-500 font-nunito tracking-wider text-xs`}
       >
-        {errorMsg}
+        {errorMsg ? errorMsg : "error"}
       </p>
     </div>
   );

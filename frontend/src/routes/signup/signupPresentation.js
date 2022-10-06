@@ -7,9 +7,11 @@ import {
   FloatLink,
 } from "../../components";
 import { useMediaQuery } from "../../hooks";
+import { FaFacebook, FaGoogle } from "react-icons/fa";
+
 import { motion } from "framer-motion";
 
-//TODO fix weird animation on mobile as content slides when switching between signin/signup pages (change position type for animation? / hide overlfow)
+//TODO BUG:fix logo popping on pag transistion
 
 let containerMotion = {
   slid: {
@@ -94,8 +96,8 @@ const SignupPresentation = ({ formik, LoadSignin }) => {
   }
 
   return (
-    <div className="flex overscroll-none">
-      <div className="p-10 h-screen w-screen flex flex-col items-center space-y-10">
+    <div className="flex overflow-hidden">
+      <div className="p-10 h-screen w-screen flex flex-col items-center space-y-4 pb-10">
         <div className="sm:self-start">
           <LogoCirc align="start" />
         </div>
@@ -104,14 +106,18 @@ const SignupPresentation = ({ formik, LoadSignin }) => {
           initial="slid"
           animate="base"
           exit="exit"
-          className="w-full flex flex-col items-center sm:h-2/3 sm:justify-center space-y-10"
+          className="w-full flex flex-col items-center sm:h-2/3 sm:justify-center space-y-4"
         >
-          <h1 className="font-open font-extrabold text-primary text-3xl text-center">
+          <h1 className="font-open font-extrabold text-primary text-2xl text-center">
             Sign Up To Lux
           </h1>
+          <div className="flex space-x-5">
+            <FaFacebook size="2em" color="#084887" />
+            <FaGoogle size="2em" color="#084887" />
+          </div>
           <form
             onSubmit={formik.handleSubmit}
-            className="w-full space-y-4 flex flex-col items-center pb-5 sm:w-2/5"
+            className="w-full space-y-4 flex flex-col items-center pb-5 sm:w-4/5 md:w-3/5 lg:w-2/4 xl:w-1/4"
           >
             <EmailInput
               name="email"
@@ -139,7 +145,7 @@ const SignupPresentation = ({ formik, LoadSignin }) => {
               onBlur={formik.handleBlur}
               touched={formik.touched.confirmPassword}
             />
-            <div className="pt-10">
+            <div className="pt-4">
               <Button
                 type="submit"
                 color="primary"
@@ -158,12 +164,12 @@ const SignupPresentation = ({ formik, LoadSignin }) => {
         initial="slid"
         animate="base"
         exit="slid"
-        className="bg-primary flex-col items-center justify-center space-y-10 p-5 hidden sm:flex sm:w-2/5"
+        className="bg-primary flex-col items-center justify-center space-y-10  hidden sm:flex p-2 w-2/5 lg:w-2/5 xl:w-1/5"
       >
         <h1 className="font-open font-extrabold text-white text-3xl text-center">
           Hello, Friend!
         </h1>
-        <p className="text-white font-nunito w-2/3 text-center text-xl font-thin tracking-wider">
+        <p className="text-white font-nunito w-4/5 text-center text-base font-thin tracking-wider">
           Enter your personal details to get started on your journey with us.
         </p>
         <OutlinedButton color="white" text="Sign In" onClick={LoadSignin} />
