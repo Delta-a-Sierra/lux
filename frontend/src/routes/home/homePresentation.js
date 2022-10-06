@@ -8,16 +8,19 @@ import {
   Footer,
   ChatAside,
 } from "../../components";
+
 import { useMediaQuery } from "../../hooks";
 
 const HomePresentation = () => {
   const isDesktop = useMediaQuery("(min-width: 1536px)");
 
   return (
-    <div>
-      <TopNav />
-      <main className="p-4 md:mx-10  grid grid-cols-6 gap-x-8">
-        <aside className="hidden md:flex flex-col gap-y-4 lg:gap-y-8 col-span-2 2xl:col-span-1">
+    <div id="main" className="flex flex-col gap-2 w-screen h-screen">
+      <section className="bg-blue-600">
+        <TopNav />
+      </section>
+      <section className="flex-1 min-h-0 grid gap-2 grid-cols-6 grid-rows-min-auto">
+        <aside className="hidden  md:flex flex-col gap-2 col-span-2 2xl:col-span-1">
           <ProfileAside />
           <AsideMenu />
           {!isDesktop && (
@@ -26,21 +29,28 @@ const HomePresentation = () => {
             </div>
           )}
         </aside>
-        <div className=" col-span-6 md:col-span-4">
-          <NewPost />
-          <div className="mt-4">
+
+        <main className="flex flex-1 flex-col gap-y-2 col-span-6 md:col-span-4 overflow-scroll lg:pr-5 pb-8">
+          <div className="flex flex-col gap-2 ml-2">
+            <div className="col-span-6">
+              <NewPost />
+            </div>
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
             <Post />
           </div>
-        </div>
+        </main>
         {isDesktop && (
-          <aside className="hidden md:flex flex-col gap-y-8 col-span-1">
+          <aside className="hidden md:flex flex-col gap-y-4 col-span-1">
             <ChatAside />
           </aside>
         )}
-      </main>
-      <div className="hidden md:block">
-        <Footer />
-      </div>
+      </section>
+      {isDesktop && <Footer />}
     </div>
   );
 };

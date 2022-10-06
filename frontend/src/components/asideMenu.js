@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import { useMediaQuery } from "../hooks";
 import AsideItem from "./asideItem";
 
-//TODO fix reponsive sizing between lg and xl breakpoints
-
 const AsideMenu = () => {
   const isDesktop = useMediaQuery("(min-width: 640px)");
 

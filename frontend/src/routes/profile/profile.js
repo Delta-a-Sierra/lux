@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   TopNav,
   Post,
-  ProfileAside,
   AsideMenu,
   Footer,
   ChatAside,
