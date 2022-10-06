@@ -30,7 +30,7 @@ const HomePresentation = () => {
           )}
         </aside>
 
-        <main className="flex flex-1 flex-col gap-y-2 col-span-6 md:col-span-4 overflow-scroll lg:pr-5 pb-8">
+        <main className="flex flex-1 flex-col gap-y-2 col-span-6 md:col-span-4  overflow-y-scroll lg:pr-5 pb-8">
           <div className="flex flex-col gap-2">
             <div className="col-span-6">
               <NewPost />

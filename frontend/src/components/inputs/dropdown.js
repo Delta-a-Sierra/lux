@@ -187,14 +187,6 @@ const Dropdown = ({
                   </li>
                 );
               })}
-              <li className="w-full block  font-nunito font-bold text-center  cursor-pointer">
-                <span
-                  onClick={() => changeValue("Zebra")}
-                  className="w-full h-full p-2 bg-gray-300 block hover:bg-gray-400 hover:text-white"
-                >
-                  {"Zebra"}
-                </span>
-              </li>
             </ul>
           )}
 

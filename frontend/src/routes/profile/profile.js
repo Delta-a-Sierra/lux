@@ -35,7 +35,7 @@ const Profile = () => {
           )}
         </aside>
 
-        <main className="flex flex-1 flex-col gap-y-2 col-span-6 md:col-span-4 overflow-scroll lg:pr-5 pb-8">
+        <main className="flex flex-1 flex-col gap-y-2 col-span-6 md:col-span-4 overflow-y-scroll lg:pr-5 pb-8">
           {page === "posts" && (
             <div className="flex flex-col gap-2">
               <Post />
