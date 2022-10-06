@@ -8,6 +8,7 @@ import {
   Dropdown,
 } from "../../components";
 
+//TODO BUG: fix phone chat box pushing container up but leaving inputs
 const GetStartedPresentation = ({
   currentSlide,
   form,

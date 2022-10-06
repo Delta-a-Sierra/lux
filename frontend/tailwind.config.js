@@ -1,3 +1,5 @@
+const { MdInbox } = require("react-icons/md");
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
@@ -20,6 +22,10 @@ module.exports = {
       fontFamily: {
         open: ["Open Sans", "sans-serif"],
         nunito: ["Nunito", "sans-serif"],
+      },
+      gridTemplateRows: {
+        "min-auto": "auto 1fr",
+        "2min-auto": "auto auto 1fr",
       },
     },
   },

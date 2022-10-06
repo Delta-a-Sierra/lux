@@ -1,5 +1,5 @@
 import React from "react";
-import { IoPersonCircle, IoLocationSharp } from "react-icons/io5";
+import { IoPersonCircle } from "react-icons/io5";
 import { useMediaQuery } from "../hooks";
 import Button from "./buttons/button";
 import LinkText from "./linkText";
@@ -23,6 +23,7 @@ const UserCard = () => {
       </div>
     );
   }
+
   return (
     <div className=" bg-gray-100 rounded-md shadow-md pb-4">
       <div className="bg-secondary rounded-t-md h-10"></div>
