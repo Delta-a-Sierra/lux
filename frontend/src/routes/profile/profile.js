@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   TopNav,
   Post,
-  ProfileAside,
   AsideMenu,
   Footer,
   ChatAside,
@@ -17,48 +16,74 @@ const Profile = () => {
   const [page, setPage] = useState("posts");
 
   return (
-    <div className="h-screen w-screen overflow-hidden overflow-y-scroll items-center flex flex-col gap-y-2">
-      <TopNav />
-      <div className="flex w-full flex-col flex-1 gap-y-3 px-4 md:px-10">
-        <ProfileHeader activePage={page} setActivePage={setPage} />
-        <div className="flex-1 mb-4 grid grid-cols-6 gap-4 lg:gap-8">
-          <aside className="hidden md:flex flex-col gap-y-4 lg:gap-y-4 col-span-2 2xl:col-span-1">
-            <AsideMenu />
-            {!isDesktop && (
-              <div className="hidden md:flex flex-col gap-y-8 col-span-1">
-                <ChatAside />
-              </div>
-            )}
-          </aside>
-          <div className="flex flex-col gap-y-4 col-span-6 md:col-span-4">
-            {page === "posts" ? "" : <SearchAlt bg="gray-100" shadow />}
-            {page === "posts" && (
-              <div className="grid grid-cols-1 gap-2">
-                <Post />
-                <Post />
-                <Post />
-              </div>
-            )}
-            {page === "following" && (
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2">
-                <UserCard />
-                <UserCard />
-                <UserCard />
-              </div>
-            )}
-            {page === "followers" && (
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2">
-                <UserCard />
-              </div>
-            )}
-          </div>
-          {isDesktop && (
-            <aside className="hidden md:flex flex-col gap-y-4 col-span-1">
-              <ChatAside />
-            </aside>
-          )}
+    <div id="main" className="flex flex-col gap-2 w-screen h-screen">
+      <section className="bg-blue-600">
+        <TopNav />
+      </section>
+      <section className="flex-1 min-h-0 grid gap-2 grid-cols-6 grid-rows-min-auto">
+        <div className="col-span-6">
+          <ProfileHeader activePage={page} setActivePage={setPage} />
         </div>
-      </div>
+        <aside className="hidden  md:flex flex-col gap-2 col-span-2 2xl:col-span-1">
+          <AsideMenu />
+          {!isDesktop && (
+            <div className="hidden md:flex flex-col gap-y-8 col-span-1">
+              <ChatAside />
+            </div>
+          )}
+        </aside>
+
+        <main className="flex flex-1 flex-col gap-y-2 col-span-6 md:col-span-4 overflow-scroll lg:pr-5 pb-8">
+          {page === "posts" && (
+            <div className="flex flex-col gap-2 ml-2">
+              <Post />
+              <Post />
+              <Post />
+              <Post />
+              <Post />
+              <Post />
+              <Post />
+            </div>
+          )}
+          {page === "following" && (
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2">
+              {page === "posts" ? (
+                ""
+              ) : (
+                <div className="col-span-1 md:col-span-2 xl:col-span-4">
+                  <SearchAlt bg="gray-100" shadow />
+                </div>
+              )}
+              <UserCard />
+              <UserCard />
+              <UserCard />
+              <UserCard />
+              <UserCard />
+              <UserCard />
+              <UserCard />
+              <UserCard />
+              <UserCard />
+            </div>
+          )}
+          {page === "followers" && (
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2">
+              {page === "posts" ? (
+                ""
+              ) : (
+                <div className="col-span-1 md:col-span-2 xl:col-span-4">
+                  <SearchAlt bg="gray-100" shadow />
+                </div>
+              )}
+              <UserCard />
+            </div>
+          )}
+        </main>
+        {isDesktop && (
+          <aside className="hidden md:flex flex-col gap-y-4 col-span-1">
+            <ChatAside />
+          </aside>
+        )}
+      </section>
       {isDesktop && <Footer />}
     </div>
   );
