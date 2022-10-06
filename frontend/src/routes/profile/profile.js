@@ -11,6 +11,8 @@ import {
 } from "../../components";
 import { useMediaQuery } from "../../hooks";
 
+//TODO BUG: page doesn't scroll to top when switch between tabs
+
 const Profile = () => {
   const isDesktop = useMediaQuery("(min-width: 1536px)");
   const [page, setPage] = useState("posts");
@@ -20,7 +22,7 @@ const Profile = () => {
       <section className="bg-blue-600">
         <TopNav />
       </section>
-      <section className="flex-1 min-h-0 grid gap-2 grid-cols-6 grid-rows-min-auto">
+      <section className="flex-1 min-h-0 grid gap-2 grid-cols-6 grid-rows-min-auto px-4 lg:px-8 xl:px-16">
         <div className="col-span-6">
           <ProfileHeader activePage={page} setActivePage={setPage} />
         </div>
@@ -35,7 +37,7 @@ const Profile = () => {
 
         <main className="flex flex-1 flex-col gap-y-2 col-span-6 md:col-span-4 overflow-scroll lg:pr-5 pb-8">
           {page === "posts" && (
-            <div className="flex flex-col gap-2 ml-2">
+            <div className="flex flex-col gap-2">
               <Post />
               <Post />
               <Post />

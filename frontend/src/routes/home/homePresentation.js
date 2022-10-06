@@ -19,7 +19,7 @@ const HomePresentation = () => {
       <section className="bg-blue-600">
         <TopNav />
       </section>
-      <section className="flex-1 min-h-0 grid gap-2 grid-cols-6 grid-rows-min-auto">
+      <section className="flex-1 min-h-0 grid gap-2 grid-cols-6 grid-rows-min-auto px-4 lg:px-8 xl:px-16">
         <aside className="hidden  md:flex flex-col gap-2 col-span-2 2xl:col-span-1">
           <ProfileAside />
           <AsideMenu />
@@ -31,7 +31,7 @@ const HomePresentation = () => {
         </aside>
 
         <main className="flex flex-1 flex-col gap-y-2 col-span-6 md:col-span-4 overflow-scroll lg:pr-5 pb-8">
-          <div className="flex flex-col gap-2 ml-2">
+          <div className="flex flex-col gap-2">
             <div className="col-span-6">
               <NewPost />
             </div>
