@@ -36,13 +36,17 @@ const GetStartedContainer = ({ title, children }) => {
       initial="initial"
       animate="base"
       exit="exit"
-      className="w-full h-2/6 flex justify-center"
+      className="w-full flex justify-center h-fit bg-gray-700"
     >
-      <main className="bg-white rounded w-full h-full p-5 space-y-5 shadow-lg sm:w-2/5">
+      <main className="bg-white rounded w-full p-5 space-y-5 shadow-lg">
         <h2 className="text-center text-primary text-2xl font-open font-bold">
           {title}
         </h2>
-        <form className="flex flex-col space-y-2 sm:space-y-5">{children}</form>
+        <div>
+          <form className="flex flex-col space-y-2 p-y-2 sm:space-y-5 sm:px-20 sm:py-4">
+            {children}
+          </form>
+        </div>
       </main>
     </motion.div>
   );
