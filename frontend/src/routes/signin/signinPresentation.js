@@ -8,24 +8,23 @@ import {
   FloatLink,
 } from "../../components";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
+import { colors } from "../../util";
 
 const SignInPresentation = ({ formik, LoadSignup }) => {
   const isLarge = useMediaQuery("(min-width: 768px)");
 
   return (
     <div className=" h-screen w-screen flex overflow-hidden">
-      <aside className="bg-primary z-10 p-4 hidden md:flex flex-col justify-center items-center  h-full  w-2/6 lg:w-2/6 xl:w-1/4">
-        <div className="bg-primary flex-col items-center justify-center space-y-8  hidden md:flex p-2 w-full">
-          <h1 className="font-open font-extrabold text-white text-3xl text-center">
-            Hello, Friend!
-          </h1>
-          <p className="text-white font-nunito text-center text-base font-thin tracking-wider">
-            Enter your personal details to get started on your journey with us.
-          </p>
-          <OutlinedButton color="white" text="Sign Up" onClick={LoadSignup} />
-        </div>
+      <aside className="bg-primary dark:bg-gray-800 z-10 p-4 hidden md:flex flex-col justify-center items-center gap-y-8  h-full  w-2/6 lg:w-2/6 xl:w-1/4">
+        <h1 className="font-open font-extrabold text-white text-3xl text-center">
+          Hello, Friend!
+        </h1>
+        <p className="text-white font-nunito text-center text-base font-thin tracking-wider">
+          Enter your personal details to get started on your journey with us.
+        </p>
+        <OutlinedButton color="white" text="Sign Up" onClick={LoadSignup} />
       </aside>
-      <main className="flex flex-col flex-1 gap-1 py-4 md:py-4 px-10 sm:px-8">
+      <main className="flex flex-col flex-1 gap-1 py-4 md:py-4 px-10 sm:px-8 dark:bg-gray-800 ">
         <header className="md:self-start flex justify-center mb-2">
           <LogoCirc align="start" width={isLarge ? "20" : "16"} />
         </header>
@@ -35,7 +34,10 @@ const SignInPresentation = ({ formik, LoadSignup }) => {
               Sign In To Lux
             </h1>
             <div className="flex space-x-5 md:mt-4 mb-4">
-              <FaFacebook size={isLarge ? "3em" : "2em"} color="#084887" />
+              <FaFacebook
+                size={isLarge ? "3em" : "2em"}
+                color={colors.primary}
+              />
               <FaGoogle size={isLarge ? "3em" : "2em"} color="#084887" />
             </div>
             <form

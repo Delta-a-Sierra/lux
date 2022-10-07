@@ -15,17 +15,15 @@ const SignupPresentation = ({ formik, LoadSignin }) => {
   const isLarge = useMediaQuery("(min-width: 768px)");
 
   return (
-    <div className=" h-screen w-screen flex overflow-hidden">
-      <aside className=" z-10 hidden md:flex flex-col justify-center items-center  h-full  w-2/6 lg:w-2/6 xl:w-1/4">
-        <div className="bg-primary flex-col items-center justify-center space-y-8  hidden md:flex p-2 h-full w-full">
-          <h1 className="font-open font-extrabold text-white text-3xl text-center">
-            Hello, Friend!
-          </h1>
-          <p className="text-white font-nunito text-center text-base font-thin tracking-wider">
-            Enter your personal details to get started on your journey with us.
-          </p>
-          <OutlinedButton color="white" text="Sign In" onClick={LoadSignin} />
-        </div>
+    <div className=" h-screen w-screen flex overflow-x-hidden overflow-y-scroll">
+      <aside className=" bg-primary z-10 p-4 hidden md:flex flex-col justify-center items-center gap-y-8  h-full  w-2/6 lg:w-2/6 xl:w-1/4">
+        <h1 className="font-open font-extrabold text-white text-3xl text-center">
+          Hello, Friend!
+        </h1>
+        <p className="text-white font-nunito text-center text-base font-thin tracking-wider">
+          Enter your personal details to get started on your journey with us.
+        </p>
+        <OutlinedButton color="white" text="Sign In" onClick={LoadSignin} />
       </aside>
       <main className="flex flex-col flex-1 gap-1 py-4 md:py-4 px-10 sm:px-8">
         <header className="md:self-start flex justify-center mb-2">

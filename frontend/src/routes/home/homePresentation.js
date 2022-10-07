@@ -16,10 +16,10 @@ const HomePresentation = () => {
 
   return (
     <div id="main" className="flex flex-col gap-2 w-screen h-screen">
-      <section className="bg-blue-600">
+      <header className="bg-blue-600">
         <TopNav />
-      </section>
-      <section className="flex-1 min-h-0 grid gap-2 grid-cols-6 grid-rows-min-auto px-4 lg:px-8 xl:px-16">
+      </header>
+      <main className="flex-1 min-h-0 grid gap-2 grid-cols-6 grid-rows-min-auto px-4 lg:px-8 xl:px-16">
         <aside className="hidden  md:flex flex-col gap-2 col-span-2 2xl:col-span-1">
           <ProfileAside />
           <AsideMenu />
@@ -30,7 +30,7 @@ const HomePresentation = () => {
           )}
         </aside>
 
-        <main className="flex flex-1 flex-col gap-y-2 col-span-6 md:col-span-4  overflow-y-scroll lg:pr-5 pb-8">
+        <div className="flex flex-1 flex-col gap-y-2 col-span-6 md:col-span-4  overflow-y-scroll lg:pr-5 pb-8">
           <div className="flex flex-col gap-2">
             <div className="col-span-6">
               <NewPost />
@@ -43,14 +43,19 @@ const HomePresentation = () => {
             <Post />
             <Post />
           </div>
-        </main>
+        </div>
         {isDesktop && (
           <aside className="hidden md:flex flex-col gap-y-4 col-span-1">
             <ChatAside />
           </aside>
         )}
-      </section>
-      {isDesktop && <Footer />}
+      </main>
+      <footer className="hidden md:block">
+        <Footer />
+      </footer>
+      <footer className="block md:hidden bg-gray-100">
+        <AsideMenu size="1.5em" justify="evenly" />
+      </footer>
     </div>
   );
 };
