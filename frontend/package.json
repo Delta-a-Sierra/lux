@@ -22,8 +22,8 @@
   },
   "scripts": {
     "start": "cp ./tailwind.config.js ./src/util/tailwindConfig/tailwind.config-duplicate.js && craco start",
-    "build": "craco build",
-    "test": "craco test",
+    "build": "cp ./tailwind.config.js ./src/util/tailwindConfig/tailwind.config-duplicate.js && craco build",
+    "test": "cp ./tailwind.config.js ./src/util/tailwindConfig/tailwind.config-duplicate.js && craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

@@ -15,7 +15,7 @@ const SignInPresentation = ({ formik, LoadSignup }) => {
 
   return (
     <div className=" h-screen w-screen flex overflow-hidden">
-      <aside className="bg-primary dark:bg-gray-800 z-10 p-4 hidden md:flex flex-col justify-center items-center gap-y-8  h-full  w-2/6 lg:w-2/6 xl:w-1/4">
+      <aside className="bg-primary  z-10 p-4 hidden md:flex flex-col justify-center items-center gap-y-8  h-full  w-2/6 lg:w-2/6 xl:w-1/4">
         <h1 className="font-open font-extrabold text-white text-3xl text-center">
           Hello, Friend!
         </h1>
@@ -24,7 +24,7 @@ const SignInPresentation = ({ formik, LoadSignup }) => {
         </p>
         <OutlinedButton color="white" text="Sign Up" onClick={LoadSignup} />
       </aside>
-      <main className="flex flex-col flex-1 gap-1 py-4 md:py-4 px-10 sm:px-8 dark:bg-gray-800 ">
+      <main className="flex flex-col flex-1 gap-1 py-4 md:py-4 px-10 sm:px-8 dark:bg-dark-800 ">
         <header className="md:self-start flex justify-center mb-2">
           <LogoCirc align="start" width={isLarge ? "20" : "16"} />
         </header>
