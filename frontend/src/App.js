@@ -10,15 +10,21 @@ import {
 } from "./routes";
 import { AnimatePresence } from "framer-motion";
 import { useTheme } from "./contexts/theme";
+import { useEffect } from "react";
 
 function App() {
   const Location = useLocation();
   const {
-    state: { theme },
+    state: { dark },
+    dispatch,
   } = useTheme();
 
+  useEffect(() => {
+    dispatch({ type: "toggle" });
+  }, []);
+
   return (
-    <div className={theme === "dark" && "dark"}>
+    <div className={dark && "dark"}>
       <AnimatePresence exitBeforeEnter>
         <Routes location={Location} key={Location.key}>
           <Route exact path="/" element={<Construction />} />

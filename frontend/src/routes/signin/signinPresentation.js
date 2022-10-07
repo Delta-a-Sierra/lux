@@ -9,9 +9,14 @@ import {
 } from "../../components";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { colors } from "../../util";
+import { useTheme } from "../../contexts/theme";
+import ThemeIcon from "../../components/themeIcon";
 
 const SignInPresentation = ({ formik, LoadSignup }) => {
   const isLarge = useMediaQuery("(min-width: 768px)");
+  const {
+    state: { dark },
+  } = useTheme();
 
   return (
     <div className=" h-screen w-screen flex overflow-hidden">
@@ -25,20 +30,29 @@ const SignInPresentation = ({ formik, LoadSignup }) => {
         <OutlinedButton color="white" text="Sign Up" onClick={LoadSignup} />
       </aside>
       <main className="flex flex-col flex-1 gap-1 py-4 md:py-4 px-10 sm:px-8 dark:bg-dark-800 ">
-        <header className="md:self-start flex justify-center mb-2">
+        <header className="flex items-center justify-center md:justify-start mb-2 w-full relative">
           <LogoCirc align="start" width={isLarge ? "20" : "16"} />
+          <div className="w-full flex justify-end absolute">
+            <ThemeIcon
+              size={isLarge ? "2em" : "1.5em"}
+              color={colors.gray["500"]}
+            />
+          </div>
         </header>
         <div className="flex-1">
           <div className="flex flex-col gap-2 h-full w-full items-center justify-center">
-            <h1 className="font-open font-extrabold text-primary text-2xl md:text-3xl lg:text-5xl text-center">
+            <h1 className="font-open font-extrabold text-primary dark:text-gray-200 text-2xl md:text-3xl lg:text-5xl text-center">
               Sign In To Lux
             </h1>
             <div className="flex space-x-5 md:mt-4 mb-4">
               <FaFacebook
                 size={isLarge ? "3em" : "2em"}
-                color={colors.primary}
+                color={dark ? colors.gray["500"] : colors.primary}
               />
-              <FaGoogle size={isLarge ? "3em" : "2em"} color="#084887" />
+              <FaGoogle
+                size={isLarge ? "3em" : "2em"}
+                color={dark ? colors.gray["500"] : colors.primary}
+              />
             </div>
             <form
               onSubmit={formik.handleSubmit}
@@ -78,7 +92,11 @@ const SignInPresentation = ({ formik, LoadSignup }) => {
               </div>
             </form>
             <div className="md:hidden pb-20">
-              <FloatLink text="Create an account?" link="/signup" />
+              <FloatLink
+                text="Create an account?"
+                link="/signup"
+                color={dark ? "gray-100" : "dark-800"}
+              />
             </div>
           </div>
         </div>

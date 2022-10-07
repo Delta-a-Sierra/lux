@@ -6,6 +6,10 @@ module.exports = {
       colors: {
         primary: "#084887",
         secondary: "#909CC2",
+        dark: {
+          500: "#292A2A",
+          800: "#222322",
+        },
         accent: "#F58A07",
         white: "#fff",
         online: "#4ACB68",
@@ -31,4 +35,4 @@ module.exports = {
   plugins: [],
 };
 
-// test
+//test 2

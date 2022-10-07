@@ -5,16 +5,13 @@ const ThemeContext = React.createContext();
 function ThemeReducer(state, action) {
   switch (action.type) {
     case "toggle": {
-      if (state.theme === "dark") {
-        return { theme: "light" };
-      }
-      return { theme: "dark" };
+      return { dark: !state.dark };
     }
   }
 }
 
 function ThemeProvider({ children }) {
-  const [state, dispatch] = React.useReducer(ThemeReducer, { theme: "light" });
+  const [state, dispatch] = React.useReducer(ThemeReducer, { dark: false });
 
   const value = { state, dispatch };
   return (
