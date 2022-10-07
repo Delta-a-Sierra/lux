@@ -29,7 +29,7 @@ const textVariant = {
   },
 };
 
-const FloatLink = ({ text, link, target }) => {
+const FloatLink = ({ text, link, target, color }) => {
   return (
     <Link target={target || ""} to={`${link || "#"}`}>
       <motion.div
@@ -41,11 +41,16 @@ const FloatLink = ({ text, link, target }) => {
       >
         <motion.h4
           variants={textVariant}
-          className="block font-nunito text-md text-center w-max"
+          className={`block font-nunito text-md text-center w-max ${
+            color && `text-${color}`
+          }`}
         >
           {text}
         </motion.h4>
-        <motion.div variants={lineVariant} className="h-0.5 w-full bg-gray-500">
+        <motion.div
+          variants={lineVariant}
+          className={`h-0.5 w-full ${color ? `bg-${color}` : " bg-gray-500"}`}
+        >
           {" "}
         </motion.div>
       </motion.div>

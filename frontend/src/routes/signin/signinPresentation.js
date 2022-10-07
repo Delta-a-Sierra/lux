@@ -26,9 +26,9 @@ const SignInPresentation = ({ formik, LoadSignup }) => {
         </div>
       </aside>
       <main className="flex flex-col flex-1 gap-1 py-4 md:py-4 px-10 sm:px-8">
-        <div className="md:self-start flex justify-center mb-2">
+        <header className="md:self-start flex justify-center mb-2">
           <LogoCirc align="start" width={isLarge ? "20" : "16"} />
-        </div>
+        </header>
         <div className="flex-1">
           <div className="flex flex-col gap-2 h-full w-full items-center justify-center">
             <h1 className="font-open font-extrabold text-primary text-2xl md:text-3xl lg:text-5xl text-center">
@@ -63,6 +63,7 @@ const SignInPresentation = ({ formik, LoadSignup }) => {
                 text="Forgot your password?"
                 target="_blank"
                 link="#"
+                color="secondary"
               />
               <div className="pt-4">
                 <Button
