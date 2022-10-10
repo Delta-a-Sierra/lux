@@ -1,5 +1,5 @@
 import React from "react";
-import { BsMoonStarsFill, BsFillSunFill } from "react-icons/bs";
+import { FaMoon, FaSun } from "react-icons/fa";
 import { useTheme } from "../contexts/theme";
 import { colors } from "../util";
 
@@ -13,7 +13,7 @@ const ThemeIcon = ({ size, color }) => {
   if (dark) {
     return (
       <div onClick={() => dispatch({ type: "toggle" })}>
-        <BsFillSunFill
+        <FaSun
           size={size ? size : "2em"}
           color={color ? color : colors.primary}
         />
@@ -22,7 +22,7 @@ const ThemeIcon = ({ size, color }) => {
   }
   return (
     <div onClick={() => dispatch({ type: "toggle" })}>
-      <BsMoonStarsFill
+      <FaMoon
         size={size ? size : "2em"}
         color={color ? color : colors.primary}
       />

@@ -86,6 +86,7 @@ const SignInPresentation = ({ formik, LoadSignup }) => {
                   type="submit"
                   color="primary"
                   text="Sign In"
+                  px={isLarge ? "8" : "4"}
                   size={isLarge ? "xl" : "xs"}
                   onClick={() => {}}
                 />

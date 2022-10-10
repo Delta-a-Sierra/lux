@@ -13,7 +13,7 @@ const buttonMotion = {
   },
 };
 
-const Button = ({ color, text, onClick, type, size, width }) => {
+const Button = ({ color, text, onClick, type, size, width, px }) => {
   return (
     <motion.button
       variants={buttonMotion}
@@ -23,7 +23,7 @@ const Button = ({ color, text, onClick, type, size, width }) => {
       onClick={onClick}
       className={`bg-${color} text-white font-open text-${
         size || "xl"
-      } font-bold px-2 py-2 
+      } font-bold ${px ? `px-${px}` : "px-2"} py-2 
         rounded-3xl text-center tracking-widest shadow-lg shadow-pink-500/50 ${
           width && `w-${width}`
         }`}
