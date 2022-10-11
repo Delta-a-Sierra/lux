@@ -1,4 +1,3 @@
-import { AnimatePresence } from "framer-motion";
 import {
   Logo,
   GetStartedContainer,
@@ -7,6 +6,9 @@ import {
   SliderEllipses,
   Dropdown,
 } from "../../components";
+import { useTheme } from "../../contexts/theme";
+
+//TODO rework buttons so there is one instead of several
 
 const GetStartedPresentation = ({
   currentSlide,
@@ -25,12 +27,16 @@ const GetStartedPresentation = ({
   errorForm,
   ValidateName,
 }) => {
+  const {
+    state: { dark },
+  } = useTheme();
+
   return (
-    <div className="bg-primary w-screen h-screen overflow-hidden flex flex-col justify-center items-center p-4 gap-y-4 pb-14">
+    <div className="bg-primary dark:bg-dark-800 w-screen h-screen overflow-hidden flex flex-col justify-center items-center p-4 gap-y-4 pb-14">
       <div>
         <Logo width="10" />
       </div>
-      <h1 className="text-white text-center text-3xl font-open font-extrabold">
+      <h1 className="text-white dark:text-primary text-center text-3xl font-open font-extrabold">
         Get Started
       </h1>
       <div className="flex-1 max-h-96 flex-col flex justify-center">
@@ -124,25 +130,28 @@ const GetStartedPresentation = ({
         {currentSlide === 0 && (
           <Button
             text="Next"
-            color="secondary"
+            color={dark ? "primary" : "secondary"}
             type="border"
             onClick={ValidateName}
+            px="8"
           />
         )}
         {currentSlide === 1 && (
           <Button
             text="Next"
-            color="secondary"
+            color={dark ? "primary" : "secondary"}
             type="border"
             onClick={ValidateDate}
+            px="8"
           />
         )}
         {currentSlide === 2 && (
           <Button
             text="Next"
-            color="secondary"
+            color={dark ? "primary" : "secondary"}
             type="border"
             onClick={ValidateLocation}
+            px="8"
           />
         )}
       </div>

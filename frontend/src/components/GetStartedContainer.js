@@ -36,10 +36,10 @@ const GetStartedContainer = ({ title, children }) => {
       initial="initial"
       animate="base"
       exit="exit"
-      className="w-full flex justify-center h-fit bg-gray-700"
+      className="w-full flex justify-center h-fit"
     >
-      <main className="bg-white rounded w-full p-5 space-y-5 shadow-lg">
-        <h2 className="text-center text-primary text-2xl font-open font-bold">
+      <main className="bg-white dark:bg-dark-500 rounded w-full p-5 space-y-5 shadow-lg">
+        <h2 className="text-center text-primary dark:text-white text-2xl font-open font-bold">
           {title}
         </h2>
         <div>
