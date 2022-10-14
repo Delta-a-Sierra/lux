@@ -13,11 +13,12 @@ const AsideMenu = ({ size, justify }) => {
     state: { dark },
   } = useTheme();
 
+
+
   return (
     <div
-      className={`bg-gray-100 dark:bg-dark-500 rounded-md text-primary font-bold text-md flex ${
-        justify ? `justify-${justify}` : "justify-center"
-      } 2xl:flex-col 2xl:text-xl tracking-wide px-8 py-4 shadow-md gap-4`}
+      className={`bg-gray-100 dark:bg-dark-500 rounded-md text-primary font-bold text-md flex ${justify ? `justify-${justify}` : "justify-center"
+        } 2xl:flex-col 2xl:text-xl tracking-wide px-8 py-4 shadow-md gap-4`}
     >
       <Link to="/home">
         <AsideItem text="Home">
@@ -27,20 +28,19 @@ const AsideMenu = ({ size, justify }) => {
           />
         </AsideItem>
       </Link>
-      <AsideItem text="Notifications">
-        <div className="alert">
+      <AsideItem alert text="Notifications">
+        <div >
           <HiBell
             color={dark ? colors.gray[300] : colors.primary}
             size={`${isDesktop ? size || "1.5em" : size || "2em"}`}
           />
         </div>
       </AsideItem>
-      <AsideItem text="Messages">
-        <div className="alert">
-          <HiChatAlt
-            color={dark ? colors.gray[300] : colors.primary}
-            size={`${isDesktop ? size || "1.5em" : size || "2em"}`}
-          />
+      <AsideItem alert text="Messages">
+        <div > <HiChatAlt
+          color={dark ? colors.gray[300] : colors.primary}
+          size={`${isDesktop ? size || "1.5em" : size || "2em"}`}
+        />
         </div>
       </AsideItem>
       <Link to="/profile">

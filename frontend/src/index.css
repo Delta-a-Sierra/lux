@@ -13,13 +13,24 @@
       top: 0;
       left: 65%;
       border-radius: 100%;
-      background-color: #F58A07;
+      background-color: #f58a07;
       width: 0.7em;
       height: 0.7em;
       border: 2px solid #f2f2f2;
     }
-    .dark .alert {
-      border: 2px solid #292A2A;
+    .alert-dark {
+      position: relative;
+    }
+    .alert-dark::after {
+      position: absolute;
+      content: " ";
+      top: 0;
+      left: 65%;
+      border-radius: 100%;
+      background-color: #f58a07;
+      width: 0.7em;
+      height: 0.7em;
+      border: 1px solid #292a2a;
     }
     @media only screen and (max-width: 1535px) {
       .alert::after {
@@ -28,4 +39,6 @@
       }
     }
   }
-}/*# sourceMappingURL=index.css.map */
+}
+
+/*# sourceMappingURL=index.css.map */
