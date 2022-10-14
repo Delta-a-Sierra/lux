@@ -15,7 +15,10 @@ const HomePresentation = () => {
   const isDesktop = useMediaQuery("(min-width: 1536px)");
 
   return (
-    <div id="main" className="flex flex-col gap-2 w-screen h-screen">
+    <div
+      id="main"
+      className="flex flex-col gap-2 w-screen h-screen dark:bg-dark-800"
+    >
       <header className="bg-blue-600">
         <TopNav />
       </header>

@@ -18,36 +18,13 @@
       height: 0.7em;
       border: 2px solid #f2f2f2;
     }
-    .status {
-      position: relative;
-    }
-    .status::before {
-      position: absolute;
-      content: " ";
-      top: 0;
-      left: 65%;
-      border-radius: 100%;
-      background-color: #F58A07;
-      width: 0.7em;
-      height: 0.7em;
-      border: 2px solid #f2f2f2;
-    }
-    .status-online::before {
-      position: absolute;
-      content: " ";
-      top: 0;
-      left: 65%;
-      border-radius: 100%;
-      background-color: #F58A07;
-      width: 0.7em;
-      height: 0.7em;
-      border: 2px solid #f2f2f2;
+    .dark .alert {
+      border: 2px solid #292A2A;
     }
     @media only screen and (max-width: 1535px) {
       .alert::after {
         width: 0.8em;
         height: 0.8em;
-        border: 2px solid #f2f2f2;
       }
     }
   }

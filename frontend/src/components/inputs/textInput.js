@@ -1,16 +1,26 @@
-const TextInput = ({ errorMsg, name, value, onChange, placeholder }) => {
+const TextInput = ({
+  errorMsg,
+  name,
+  value,
+  onChange,
+  placeholder,
+  noErrors,
+  bg,
+}) => {
   //TODO change auto fill background color
 
   return (
-    <div className="w-full">
+    <div>
       <label
         htmlFor="email"
         className={`${
           errorMsg ? "border border-red-500" : ""
-        } flex items-center space-x-3 bg-gray-200  rounded-full w-full px-4 py-3  text-xs sm:text-base`}
+        } flex items-center space-x-3 ${
+          bg ? `bg-${bg}` : "bg-gray-200"
+        }   rounded-full w-full px-4 py-3  text-xs sm:text-base`}
       >
         <input
-          className="bg-gray-200 w-full outline-none"
+          className=" bg-transparent w-full outline-none text-gray-600"
           type="text"
           name={name}
           placeholder={placeholder}
@@ -18,13 +28,15 @@ const TextInput = ({ errorMsg, name, value, onChange, placeholder }) => {
           onChange={onChange}
         />
       </label>
-      <p
-        className={`${
-          errorMsg ? "visible" : "invisible"
-        } mt-1 ml-5 text-red-500 font-nunito tracking-wider text-xs sm:text-base`}
-      >
-        {errorMsg ? errorMsg : "error"}
-      </p>
+      {!noErrors && (
+        <p
+          className={`${
+            errorMsg ? "visible" : "invisible"
+          } mt-1 ml-5 text-red-500 font-nunito tracking-wider text-xs sm:text-base`}
+        >
+          {errorMsg ? errorMsg : "error"}
+        </p>
+      )}
     </div>
   );
 };

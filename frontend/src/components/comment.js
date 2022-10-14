@@ -9,7 +9,7 @@ const Comment = () => {
       <div className="pl-4">
         <PostUser />
       </div>
-      <p className="text-gray-500 my-2 px-4 pb-4">
+      <p className="text-gray-500 dark:text-gray-400 my-2 px-4 pb-4">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis odit
         ut ex iusto animi officiis atque dolorem doloremque veniam minima eos
         at, recusandae sequi, nemo esse consectetur vitae, velit molestias?
