@@ -7,14 +7,14 @@ const ProfileAside = () => {
   const isLarge = useMediaQuery("(min-width: 1280px)");
 
   return (
-    <div className="bg-gray-100 rounded-md pb-4 shadow-md">
-      <div className="bg-secondary rounded-t-md w-full h-16"></div>
+    <div className="bg-gray-100 dark:bg-dark-500 rounded-md pb-4 shadow-md">
+      <div className="bg-secondary dark:bg-primary rounded-t-md w-full h-16"></div>
       <div className="flex justify-center relative border-white pb-5">
-        <div className="bg-gray-100 rounded-full -top-10 absolute">
+        <div className="bg-gray-100 dark:bg-dark-500 rounded-full -top-10 absolute">
           <IoPersonCircle color="#084887" size="4em" />
         </div>
       </div>
-      <h2 className=" text-center font-bold text-primary text-sm xl:text-lg">
+      <h2 className=" text-center font-bold text-primary dark:text-white text-sm xl:text-lg">
         Dwayne Sutherland
       </h2>
       <div className="flex items-center justify-center gap-2 mb-2 xl:mb-4">
