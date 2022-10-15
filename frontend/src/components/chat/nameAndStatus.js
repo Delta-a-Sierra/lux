@@ -7,7 +7,7 @@ const NameAndStatus = ({ name, status }) => {
     <div className="flex gap-2 items-center">
       <IoPersonCircle color="#084887" size="2em" />
       <div className="w-9/12">
-        <h3 className="text-primary text-md font-bold whitespace-nowrap max-w-full overflow-hidden overflow-ellipsis">
+        <h3 className="text-primary dark:text-gray-300 text-md font-bold whitespace-nowrap max-w-full overflow-hidden overflow-ellipsis">
           {name}
         </h3>
         <Status status={status} />

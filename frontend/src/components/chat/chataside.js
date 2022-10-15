@@ -3,8 +3,8 @@ import NameAndStatus from "./nameAndStatus";
 
 const ChatAside = () => {
   return (
-    <div className="bg-gray-100 rounded-md pb-4 shadow-md">
-      <div className="bg-primary rounded-t-md p-1 2xl:py-2 border-b-4 border-secondary mb-4">
+    <div className="bg-gray-100 dark:bg-dark-500 rounded-md pb-4 shadow-md">
+      <div className="bg-primary rounded-t-md p-1 2xl:py-4 mb-4">
         <h2 className="text-white text-lg 2xl:text-2xl font-bold text-center">
           Chat
         </h2>
