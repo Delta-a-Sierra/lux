@@ -27,7 +27,7 @@ jobs:
           gistID: 977c23f83f440413bd4a2f6fed55e844
           filename: lux.${{ github.ref_name }}.go-coverage.svg
           label: backend coverage
-          message: ${{ steps.coverage-check.outputs.total_coverage }}
+          message: ${{ steps.coverage-check.outputs.total_coverage }}%
           valColorRange: ${{ steps.coverage-check.outputs.total_coverage }}
           maxColorRange: 90
           minColorRange: 50
