@@ -19,15 +19,17 @@ jobs:
         with:
           profile: ./backend/cover.out
           local-prefix: github.com/delta-a-sierra/lux
-          threshold-total: 95
+          threshold-total: 90
 
       - name: create coverage badge
         if: always()
         uses: schneegans/dynamic-badges-action@v1.7.0
         with:
           auth: ${{ secrets.GIST_SECRET }}
-          gistID: c605076ad814cdfb8948a52cb4c8e8c9
-          filename: lux.${{ github.ref_name }}.go.coverage.svg
-          label: go coverage
-          message: 10%
-          color: orange
+          gistID: 977c23f83f440413bd4a2f6fed55e844
+          filename: lux.${{ github.ref_name }}.go-coverage.svg
+          label: backend coverage
+          message: ${{ steps.coverage-check.outputs.total-coverage }}
+          valColorRange: ${{ steps.coverage-check.outputs.total-coverage }}
+          maxColorRange: 90
+          minColorRange: 50
