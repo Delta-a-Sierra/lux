@@ -11,7 +11,7 @@ jobs:
 
       - name: generate test coverage
         working-directory: ./backend
-        run: test ./... -coverprofile=./cover.out -covermode=atomic -coverpkg=./...
+        run: go test ./... -coverprofile=./cover.out -covermode=atomic -coverpkg=./...
 
       - name: check test coverage
         id: coverage-check
