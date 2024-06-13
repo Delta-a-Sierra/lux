@@ -15,8 +15,7 @@ jobs:
 
       - name: check test coverage
         id: coverage-check
-        uses: vladopajic/go-test-coverage@v2.10.1
-
+        uses: vladopajic/go-test-coverage@v2
         with:
           profile: ./backend/cover.out
           local-prefix: github.com/delta-a-sierra/lux
@@ -30,7 +29,7 @@ jobs:
           gistID: 977c23f83f440413bd4a2f6fed55e844
           filename: lux.${{ github.ref_name }}.go-coverage.svg
           label: backend coverage
-          message: ${{ steps.coverage-check.outputs.total-coverage }}
-          valColorRange: ${{ steps.coverage-check.outputs.total-coverage }}
+          message: ${{ steps.coverage-check.outputs.total_coverage }}
+          valColorRange: ${{ steps.coverage-check.outputs.total_coverage }}
           maxColorRange: 90
           minColorRange: 50
