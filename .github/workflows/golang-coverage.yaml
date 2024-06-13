@@ -27,7 +27,7 @@ jobs:
         with:
           auth: ${{ secrets.GIST_SECRET }}
           gistID: c605076ad814cdfb8948a52cb4c8e8c9
-          filename: lux.${{ github.ref_name }}.go-coverage.svg
+          filename: lux.${{ github.ref_name }}.go.coverage.svg
           label: go coverage
           message: 10%
           color: orange
