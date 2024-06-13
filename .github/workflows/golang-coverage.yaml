@@ -1,0 +1,33 @@
+name: Build Infrastructure
+on:
+  push:
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+
+      - name: generate test coverage
+        working-directory: ./backend
+        run: test ./... -coverprofile=./cover.out -covermode=atomic -coverpkg=./...
+
+      - name: check test coverage
+        id: coverage-check
+        uses: vladopajic/go-test-coverage@v2
+        with:
+          profile: ./backend/cover.out
+          local-prefix: github.com/delta-a-sierra/lux
+          threshold-total: 95
+
+      - name: create coverage badge
+        if: always()
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: c605076ad814cdfb8948a52cb4c8e8c9
+          filename: lux.${{ github.ref_name }}.go-coverage.svg
+          label: go coverage
+          message: 10%
+          color: orange
